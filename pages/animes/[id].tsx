@@ -1,11 +1,11 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 
-import { Anime, User } from '../../interfaces'
+import { Anime } from '../../interfaces'
 import ListDetail from '../../components/ListDetail'
 import { getAnimes } from '../../apis/animeServices'
 
 type Props = {
-  item?: User
+  item?: Anime
   errors?: string
 }
 
@@ -35,9 +35,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = items.map((user: any) => ({
     params: { id: user.id.toString() },
   }))
-  console.log("paths", paths);
-
-  // }
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.

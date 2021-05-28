@@ -1,16 +1,25 @@
 import * as React from 'react'
+import { Card, CardBody, CardHeader, Col, Row } from 'reactstrap'
 
-import { User } from '../interfaces'
+import { Anime } from '../interfaces'
 
 type ListDetailProps = {
-  item: User
+  item: Anime
 }
 
-const ListDetail = ({ item: user }: ListDetailProps) => (
-  <div>
-    <h1>Detail for {user.name}</h1>
-    <p>ID: {user.id}</p>
-  </div>
+const ListDetail = ({ item: anime }: ListDetailProps) => (
+  <Row>
+    <Col>
+      <Card>
+        <CardHeader>
+          <h1>{anime?.attributes?.titles?.en_jp}</h1>
+        </CardHeader>
+        <CardBody>
+          <p>{anime?.attributes?.description}</p>
+        </CardBody>
+      </Card>
+    </Col>
+  </Row>
 )
 
 export default ListDetail

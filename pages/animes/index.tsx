@@ -34,8 +34,6 @@ export const getStaticProps: GetStaticProps = async () => {
   } else {
     return { redirect: { destination: "/404", }, props: {} }
   }
-  console.log("items", items);
-
   return { props: { items } }
 }
 
