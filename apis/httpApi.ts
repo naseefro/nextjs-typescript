@@ -1,23 +1,5 @@
 import axios, { AxiosResponse } from "axios"
 
-// interface ServerResponse {
-//   data: ServerData
-// }
-
-// interface ServerData {
-//   foo: string
-//   bar: number
-// }
-// axios.request<ServerData>({
-//   url: 'https://example.com/path/to/data',
-//   transformResponse: (r: ServerResponse) => r.data
-// }).then((response) => {
-//   // `response` is of type `AxiosResponse<ServerData>`
-//   const { data } = response
-//   // `data` is of type ServerData, correctly inferred
-// })
-
-
 const instance = axios.create({
   baseURL: "https://kitsu.io/api/edge",
 });
@@ -32,7 +14,7 @@ const errorHandler = (error: any) => {
 }
 
 const successHandler = (response: AxiosResponse<any>) => {
-  console.log("Success")
+  console.log("Api response success")
   return response
 }
 
